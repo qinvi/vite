@@ -1,19 +1,23 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
+  <div id="app">
     <div>
       <router-link to="/">首页</router-link>
       <router-link to="/about">关于</router-link>
+      <button @click="increate">{{ state.FillingEventArgcount }}</button>
     </div>
     <router-view></router-view>
   </div>
 </template>
 
+<script setup>
+import { reactive } from 'vue'
+
+const state = reactive({ count: 0 })
+
+function increate() {
+  state.count++
+}
+</script>
 <style scoped>
 .logo {
   height: 6em;
