@@ -1,22 +1,15 @@
 <template>
   <div id="app">
     <div>
-      <router-link to="/">首页</router-link>
-      <router-link to="/about">关于</router-link>
-      <button @click="increate">{{ state.FillingEventArgcount }}</button>
+      <router-link :to="routerPath.home">首页</router-link>
+      <router-link :to="routerPath.about">关于</router-link>
     </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
-
-const state = reactive({ count: 0 })
-
-function increate() {
-  state.count++
-}
+import { routerPath } from 'router/map'
 </script>
 <style scoped>
 .logo {
