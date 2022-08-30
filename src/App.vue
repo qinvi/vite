@@ -10,6 +10,12 @@
 
 <script setup>
 import { routerPath } from 'router/map'
+import { useStore } from 'vuex'
+import { computed } from 'vue'
+
+let store = useStore()
+
+const test = computed(() => store.state.test)
 </script>
 <style scoped>
 .logo {
